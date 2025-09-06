@@ -1,6 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Navbar: React.FC = () => {
+  const { i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const currentLang = i18n.language.split("-")[0];
+    const newLang = i18n.language === "es" ? "en" : "es";
+    i18n.changeLanguage(newLang);
+  };
+
+  const currentLang = i18n.language.split("-")[0].toUpperCase();
+
   return (
     <nav style={styles.nav}>
       <div style={styles.logo}>Assier García De La Vega García</div>
@@ -10,6 +21,11 @@ const Navbar: React.FC = () => {
         <li><a href="#projects" style={styles.link}>Proyectos</a></li>
         <li><a href="#contact" style={styles.link}>Contacto</a></li>
       </ul> */}
+      <div>
+        <button onClick={toggleLanguage} style={styles.langBtn}>
+        {currentLang}
+      </button>
+      </div>
     </nav>
   );
 };
@@ -33,6 +49,16 @@ const styles = {
     listStyleType: "none",
   },
   link: { color: "white", textDecoration: "none" },
+  langBtn: {
+    background: "transparent",
+    border: "1px solid white",
+    borderRadius: "4px",
+    padding: "0.3rem 0.6rem",
+    color: "white",
+    cursor: "pointer",
+    marginLeft: "1rem",
+    fontWeight: "bold",
+  },
 };
 
 export default Navbar;

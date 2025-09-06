@@ -1,19 +1,22 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section style={{ padding: "2rem" }}>
-      <h1>Trayectoria profesional</h1>
-      <h2>Destinia S.L.U. (2022 - Actualidad)</h2>
-      <a href="https://destinia.com/">Agencia de viajes</a>
+      <h1>{ t("1") }</h1>
+      <h2>Destinia S.L.U. (2022 - { t("2") })</h2>
+      <a href="https://destinia.com/">{ t("3") }</a>
       <p>
-        Actualmente me encuentro trabajando en un CRM propio.
+        {t("10")}
         <br/>
-        Backend: PHP 8.2, PhpUnit, MySql(MariaDB), MongoDb, Redis ... 
+        {t("11")}
         <br/>
-        Frontend: Vue.js 3 Options API JavaScript, Cypress, Vuex (Store), i18n(Internationalization), Router ...
+        {t("12")}
         <br/>
-        Otras skills: n8n, Knowage(BI), Cerb.ai (helpdesk), ...
+        {t("13")}
         <br/>
       </p>
     </section>

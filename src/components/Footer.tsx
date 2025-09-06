@@ -1,7 +1,10 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer style={styles.footer}>
       <div style={styles.icons}>
@@ -22,7 +25,7 @@ const Footer: React.FC = () => {
           <FaGithub size={24} />
         </a>
       </div>
-      <p>© {new Date().getFullYear()} Mi Portfolio. Todos los derechos reservados.</p>
+      <p>© {new Date().getFullYear()} {t("4")}. {t("8")}.</p>
     </footer>
   );
 };
